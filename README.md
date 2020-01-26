@@ -25,7 +25,7 @@
    ];
 4. Place <router-outlet></router-outlet> in html template
 
-# Installing ngx-toastr (I have choose it to display styled allerts after certain interaction with jsonplaceholder API)
+# Installing ngx-toastr (I have choose it to display styled alerts after certain interaction with jsonplaceholder API)
 1. Run npm install ngx-toastr --save
 2. Run npm install @angular/animations --save (angular animations are required for default toast)
 3. Register toastr css in angular.json styles[] by adding node_modules/ngx-toastr/toastr.css
