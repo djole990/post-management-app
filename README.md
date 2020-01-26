@@ -10,7 +10,7 @@
 
 # Installing bootstrap
 1. Run npm install --save bootstrap@3 (I have used Bootstrap 3 for this project)
-2. Open angular.json file and add node_modules/bootstrap/dist/css/boostrap.min.css to stiles[] array
+2. Open angular.json file and add node_modules/bootstrap/dist/css/boostrap.min.css to styles[] array
 
 # Adding Angular routing module
 1. Run ng generate module app-routing --flat --module=app (--flat for installing in src/app folder, --module=app for registering in imports[] in AppModule)
