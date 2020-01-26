@@ -1,6 +1,6 @@
 <div class="row center-content">
 
-    <form class="col-md-8 col-xs-8 align-center" [formGroup]="form">
+    <form class="col-md-8 col-xs-8 align-center form-group" [formGroup]="form">
 
         <h1>{{ title }}</h1>
 
@@ -69,11 +69,12 @@
                     <label for="bs">BS:</label>
                     <input class="form-control" formControlName="bs" placeholder="Something awesome" id="bs" />
                 </div>
-            </div>
-        </div>
 
-        <div class="text-right">
-            <button class="btn btn-success" (click)="saveUser()">Save</button>
+                <div class="text-right buttonDiv">
+                    <button class="btn btn-success" (click)="saveUser()">Save</button>
+                </div>
+            </div>  
+                  
         </div>
     </form>
 </div>

@@ -7,7 +7,15 @@
 }
 
 .form{
-  background-color:seashell; 
-  padding-bottom: 20px; 
+  background-color:seashell;  
   border-radius: 10px;
 }
+
+.buttonDiv {
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.buttonDiv > button {
+  width: 100px;
+} 

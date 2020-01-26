@@ -14,6 +14,16 @@
 
 # Adding Angular routing module
 1. Run ng generate module app-routing --flat --module=app (--flat for installing in src/app folder, --module=app for registering in imports[] in AppModule)
+2. Inside app.routing.module.ts change @NgModule to: 
+   @NgModule({
+     imports: [RouterModule.forRoot(routes)],
+     exports: [RouterModule]
+   })
+3. We can now declare our routes:
+   const routes: Routes = [
+     { path: 'path', component: component-name }
+   ];
+4. Place <router-outlet></router-outlet> in html template
 
 # Installing ngx-toastr (I have choose it to display styled allerts after certain interaction with jsonplaceholder API)
 1. Run npm install ngx-toastr --save
@@ -22,10 +32,10 @@
 4. Add BrowserAnimationModule and ToastrModule.forRoot() to app NgModule imports[] 
 
 # Generating components, services, model classes, interfaces
-1.To generate component run: ng generate component component-name
-2.To generate class run: ng generate class class-name
-3.To generate service run: ng generate service service-name
-4.To generate interface run: ng generate interface interface-name
+1. To generate component run: ng generate component component-name
+2. To generate class run: ng generate class class-name
+3. To generate service run: ng generate service service-name
+4. To generate interface run: ng generate interface interface-name
 
 # Working with components
 1. Components are added to other components html template by special tags with their specified selector property
