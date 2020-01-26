@@ -5,7 +5,7 @@
 4. During creation process you will be promted to choose:
   -if you want to add Angular routing (I have decided to add it later)
   -what stylesheet format you would like to use (I have picked CSS)
-5. After creatin process is finished you can run development server by navigating to your app folder and runing: ng serve
+5. After creation process is finished you can run development server by navigating to your app folder and runing: ng serve
 6. You can check your app at http://localhost:4200
 
 # Installing bootstrap
@@ -25,7 +25,7 @@
    ];
 4. Place <router-outlet></router-outlet> in html template
 
-# Installing ngx-toastr (I have choose it to display styled alerts after certain interaction with jsonplaceholder API)
+# Installing ngx-toastr (I have choosen it to display styled alerts after certain interaction with jsonplaceholder API)
 1. Run npm install ngx-toastr --save
 2. Run npm install @angular/animations --save (angular animations are required for default toast)
 3. Register toastr css in angular.json styles[] by adding node_modules/ngx-toastr/toastr.css
@@ -40,8 +40,11 @@
 # Working with components
 1. Components are added to other components html template by special tags with their specified selector property
    (in my app-component template I have two child components <app-post></app-post> and <app-comment></app-comment>)
-2. We can write specific CSS for specific component inside component-name.css file
+2. We can write CSS for specific component inside component-name.css file
 
 # Working with services
 1. For this project I have used services for communication with jasonplaceholder API using HttpClient methods to send requests (get, post, put, delete)
-2. In components I was accessing necesary services by injecting them into components constructor method
+2. To use services in components inject them in components constructor
+   constructor(
+     private sampleService: SampleService
+   ) {}
