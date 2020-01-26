@@ -1,0 +1,43 @@
+<div class="row center-content">
+
+    <form class="col-md-8 col-xs-8 align-center" [formGroup]="form">
+
+        <h1>{{ title }}</h1>
+
+        <label for="userform">User Details:</label>
+        <div id="userform">
+            <input type="hidden" formControlName="id" />
+            <input class="form-control" formControlName="name" placeholder="Full name" />
+            <input class="form-control" formControlName="username" placeholder="Username" />
+            <input class="form-control" formControlName="email" placeholder="Email" />
+            <input class="form-control" formControlName="phone" placeholder="Phone" />
+            <input class="form-control" formControlName="website" placeholder="Website" />
+
+            <label for="userform">Address:</label>
+            <div id="address" formGroupName="address">
+                <input class="form-control" formControlName="street" placeholder="Street" />
+                <input class="form-control" formControlName="suite" placeholder="Suite" />
+                <input class="form-control" formControlName="city" placeholder="City" />
+                <input class="form-control" formControlName="zipcode" placeholder="Zip Code" />
+
+                <div formGroupName="geo">
+                    <input class="form-control" formControlName="lat" placeholder="Latitude" />
+                    <input class="form-control" formControlName="lng" placeholder="Longitude" />
+                </div>
+            </div>
+
+            <label for="company">Company:</label>
+            <div id="company" formGroupName="company">
+                <input class="form-control" formControlName="name" placeholder="Name" />
+                <input class="form-control" formControlName="catchPhrase" placeholder="Catch Phrase" />
+                <input class="form-control" formControlName="bs" placeholder="BS" />
+            </div>
+        </div>
+
+        <div class="text-right">
+            <button class="btn btn-success" style="margin-top: 10px;" (click)="saveUser()">Save</button>
+        </div>
+
+    </form>
+
+</div>

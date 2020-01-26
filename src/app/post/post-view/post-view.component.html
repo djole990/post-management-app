@@ -1,0 +1,21 @@
+<div class="row" *ngIf="post">
+  <div class="col-md-5">
+    <div class="row">
+      <div class="col-md-12">
+        <app-user-details [post]="post"></app-user-details>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <app-post-details  [update]="update" [post]="post"></app-post-details>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-7" *ngIf="post">
+    <app-post-comments [post]="post"></app-post-comments>
+  </div>
+</div>
+<div class="text-right">
+  <button (click)="forUpdate()" class="btn btn-warning">Edit Post</button>
+</div>
+
