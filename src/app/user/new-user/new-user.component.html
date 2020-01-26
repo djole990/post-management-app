@@ -4,40 +4,76 @@
 
         <h1>{{ title }}</h1>
 
-        <label for="userform">User Details:</label>
-        <div id="userform">
+        <div class="row form">
             <input type="hidden" formControlName="id" />
-            <input class="form-control" formControlName="name" placeholder="Full name" />
-            <input class="form-control" formControlName="username" placeholder="Username" />
-            <input class="form-control" formControlName="email" placeholder="Email" />
-            <input class="form-control" formControlName="phone" placeholder="Phone" />
-            <input class="form-control" formControlName="website" placeholder="Website" />
 
-            <label for="userform">Address:</label>
-            <div id="address" formGroupName="address">
-                <input class="form-control" formControlName="street" placeholder="Street" />
-                <input class="form-control" formControlName="suite" placeholder="Suite" />
-                <input class="form-control" formControlName="city" placeholder="City" />
-                <input class="form-control" formControlName="zipcode" placeholder="Zip Code" />
+            <div class="col-md-6">
+                <h4>Pesonal info</h4>
 
-                <div formGroupName="geo">
-                    <input class="form-control" formControlName="lat" placeholder="Latitude" />
-                    <input class="form-control" formControlName="lng" placeholder="Longitude" />
+                <label for="name">Full name:</label>
+                <input class="form-control" formControlName="name" placeholder="John Smith" id="name" />
+
+                <label for="username">Username:</label>
+                <input class="form-control" formControlName="username" placeholder="Joe" id="username" />
+
+                <label for="email">Email:</label>
+                <input class="form-control" formControlName="email" placeholder="john.smith@mail.com" id="email" />
+
+                <label for="phone">Phone:</label>
+                <input class="form-control" formControlName="phone" placeholder="+387123456" id="phone" />
+
+                <label for="website">Website:</label>
+                <input class="form-control" formControlName="website" placeholder="www.john-smith.com" id="website" />
+            </div>
+
+            <div class="col-md-6">
+                <div formGroupName="address">
+                    <h4>Address</h4>
+
+                    <label for="street">Street:</label>
+                    <input class="form-control" formControlName="street" placeholder="5th Avenue" id="street" />
+
+                    <label for="suite">Suite:</label>
+                    <input class="form-control" formControlName="suite" placeholder="5478" id="suite" />
+
+                    <label for="city">City:</label>
+                    <input class="form-control" formControlName="city" placeholder="New York" id="city" />
+
+                    <label for="zipcode">Zipcode:</label>
+                    <input class="form-control" formControlName="zipcode" placeholder="4892318" id="zipcode" />
+
+                    <div class="row" formGroupName="geo">
+                        <div class="col-md-6">
+                            <label for="lat">Latitude:</label>
+                            <input class="form-control" formControlName="lat" placeholder="-11.624" id="lat" />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="lng">Longitude:</label>
+                            <input class="form-control" formControlName="lng" placeholder="34.783" id="lng" />
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <label for="company">Company:</label>
-            <div id="company" formGroupName="company">
-                <input class="form-control" formControlName="name" placeholder="Name" />
-                <input class="form-control" formControlName="catchPhrase" placeholder="Catch Phrase" />
-                <input class="form-control" formControlName="bs" placeholder="BS" />
+            <div class="col-md-12">
+                <div formGroupName="company">
+                    <h4>Company details</h4>
+
+                    <label for="companyName">Name:</label>
+                    <input class="form-control" formControlName="name" placeholder="Cool Company" id="companyName" />
+
+                    <label for="catchPhrase">Catch Phrase:</label>
+                    <input class="form-control" formControlName="catchPhrase" placeholder="Veni Vidi Vici"
+                        id="catchPhrase" />
+
+                    <label for="bs">BS:</label>
+                    <input class="form-control" formControlName="bs" placeholder="Something awesome" id="bs" />
+                </div>
             </div>
         </div>
 
         <div class="text-right">
-            <button class="btn btn-success" style="margin-top: 10px;" (click)="saveUser()">Save</button>
+            <button class="btn btn-success" (click)="saveUser()">Save</button>
         </div>
-
     </form>
-
 </div>
