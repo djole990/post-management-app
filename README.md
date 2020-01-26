@@ -1,27 +1,37 @@
-# PostManagementApp
+# Basic setup
+1. Download and install NodeJS from https://nodejs.org/en/download/
+2. Install Angular CLI by running following command in CMD: npm install -g @angular/cli
+3. Navigate to the desired folder and run: ng new name_of_your_app
+4. During creation process you will be promted to choose:
+  -if you want to add Angular routing (I have decided to add it later)
+  -what stylesheet format you would like to use (I have picked CSS)
+5. After creatin process is finished you can run development server by navigating to your app folder and runing: ng serve
+6. You can check your app at http://localhost:4200
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
+# Installing bootstrap
+1. Run npm install --save bootstrap@3 (I have used Bootstrap 3 for this project)
+2. Open angular.json file and add node_modules/bootstrap/dist/css/boostrap.min.css to stiles[] array
 
-## Development server
+# Adding Angular routing module
+1. Run ng generate module app-routing --flat --module=app (--flat for installing in src/app folder, --module=app for registering in imports[] in AppModule)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Installing ngx-toastr (I have choose it to display styled allerts after certain interaction with jsonplaceholder API)
+1. Run npm install ngx-toastr --save
+2. Run npm install @angular/animations --save (angular animations are required for default toast)
+3. Register toastr css in angular.json styles[] by adding node_modules/ngx-toastr/toastr.css
+4. Add BrowserAnimationModule and ToastrModule.forRoot() to app NgModule imports[] 
 
-## Code scaffolding
+# Generating components, services, model classes, interfaces
+1.To generate component run: ng generate component component-name
+2.To generate class run: ng generate class class-name
+3.To generate service run: ng generate service service-name
+4.To generate interface run: ng generate interface interface-name
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Working with components
+1. Components are added to other components html template by special tags with their specified selector property
+   (in my app-component template I have two child components <app-post></app-post> and <app-comment></app-comment>)
+2. We can write specific CSS for specific component inside component-name.css file
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Working with services
+1. For this project I have used services for communication with jasonplaceholder API using HttpClient methods to send requests (get, post, put, delete)
+2. In components I was accessing necesary services by injecting them into components constructor method

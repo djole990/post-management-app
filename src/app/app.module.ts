@@ -16,7 +16,6 @@ import { NewUserComponent } from './user/new-user/new-user.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserDetailsComponent } from './post/post-view/user-details/user-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -34,7 +33,7 @@ import { ToastrModule } from 'ngx-toastr';
     UserListComponent,
     UserDetailsComponent 
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule, ReactiveFormsModule, CommonModule, BrowserAnimationsModule, ToastrModule.forRoot()],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule, ToastrModule.forRoot()],
   providers: [],
   bootstrap: [AppComponent]
 })
