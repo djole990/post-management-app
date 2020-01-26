@@ -19,36 +19,27 @@ export class UserService {
   }
 
   getUser(id: number): Observable<User> {
-    return this.httpService
-      .get<User>(`${this.baseUrl}${id}`)
-      .pipe(
-        map(data => new User().deserialize(data)),
-        catchError(() => throwError("User not found"))
-      );
+    return this.httpService.get<User>(`${this.baseUrl}${id}`).pipe(
+      map(data => new User().deserialize(data)),
+      catchError(() => throwError("User not found"))
+    );
   }
 
   createUser(user: User): Observable<{}> {
     let body = user;
-    return this.httpService.post(
-      this.baseUrl,
-      body,
-      { observe: "response" }
-    );
+    return this.httpService.post(this.baseUrl, body, { observe: "response" });
   }
 
   updateUser(user: User): Observable<{}> {
     let body = user;
-    return this.httpService.put(
-      `${this.baseUrl}${user.id}`,
-      body,
-      { observe: "response" }
-    );
+    return this.httpService.put(`${this.baseUrl}${user.id}`, body, {
+      observe: "response"
+    });
   }
 
   deleteUser(id: number) {
-    return this.httpService.delete(
-      `${this.baseUrl}${id}`,
-      { observe: "response" }
-    );
+    return this.httpService.delete(`${this.baseUrl}${id}`, {
+      observe: "response"
+    });
   }
 }

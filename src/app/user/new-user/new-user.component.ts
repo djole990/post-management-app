@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from "@angular/forms";
 import { User } from "src/app/models/user";
 import { UserService } from "src/app/services/user-service";
 import { ActivatedRoute } from "@angular/router";
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: "app-new-user",
@@ -16,7 +17,8 @@ export class NewUserComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private userService: UserService
+    private userService: UserService,
+    private toastr: ToastrService
   ) {}
 
   form = new FormGroup({
@@ -53,12 +55,14 @@ export class NewUserComponent implements OnInit {
     if (!this.update) {
       this.userService.createUser(this.user).subscribe(res => {
         console.log(res);
-        console.log("User Created!!");
+        console.log("User successfully created!!");
+        this.toastr.success("User successfully created!!")
       });
     } else {
       this.userService.updateUser(this.user).subscribe(res => {
         console.log(res);
-        console.log("User Updated!!");
+        console.log("User successfuly updated!!");
+        this.toastr.success("User successfully updated!!")
       });
     }
   }
