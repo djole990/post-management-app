@@ -1,12 +1,24 @@
+<h4>Comments:</h4>
+
 <ul class="list-group" *ngFor="let comment of comments">
-  <li class="list-group-item">
-    <div class="card bg-light mb-3">
-      <div class="card-header"><strong> {{ comment.name }} </strong></div>
+  <li class="list-group-item" style="background-color: #f6f6f2">
+    <div class="card">
+
+      <div class="row">
+        <div class="col-md-7">
+          <div class="card-header"><strong> {{ comment.name }} </strong></div>
+        </div>
+        <div class="col-md-5">
+          <div class="text-right">
+            <p class="card-text"><span class="glyphicon glyphicon-pencil"></span> {{ comment.email }} </p>
+          </div>
+        </div>
+      </div>
+
+      
       <div class="card-body">
         <h5 class="card-title"><i> {{ comment.body }} </i></h5>
-        <div class="text-right">
-          <p class="card-text"><strong>Author:</strong> {{ comment.email }} </p>
-        </div>
+        
       </div>
     </div>
   </li>

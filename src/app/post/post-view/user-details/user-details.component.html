@@ -1,19 +1,21 @@
-<h4>User info:</h4>
-
-<div class="">Name: {{ user.name }}</div>
-<div class="">Username: {{ user.username }}</div>
-<div class="">Email: {{ user.email }}</div>
-<div class="">Phone: {{ user.phone }}</div>
-<div class="">Website: {{ user.website }}</div>
-
-<br>
-<strong>Address:</strong>
-
-<div class="">Street: {{ user.address.street }}</div>
-<div class="">Suite: {{ user.address.suite }}</div>
-<div class="">City: {{ user.address.city }}</div>
-<div class="">Zip code: {{ user.address.zipcode }}</div>
-<div class="">Geo: {{ user.address.geo.lat }} Latitude - {{ user.address.geo.lng }} Longitude</div>
+<div class="row">
+    <div class="col-md-6">
+        <h4>User info:</h4>
+        <div class="">Name: {{ user.name }}</div>
+        <div class="">Username: {{ user.username }}</div>
+        <div class="">Email: {{ user.email }}</div>
+        <div class="">Phone: {{ user.phone }}</div>
+        <div class="">Website: {{ user.website }}</div>
+    </div>
+    <div class="col-md-6">
+        <h4>Address:</h4>
+        <div class="">Street: {{ user.address.street }}</div>
+        <div class="">Suite: {{ user.address.suite }}</div>
+        <div class="">City: {{ user.address.city }}</div>
+        <div class="">Zip code: {{ user.address.zipcode }}</div>
+        <div class="">Geo: {{ user.address.geo.lat }} Latitude - {{ user.address.geo.lng }} Longitude</div>
+    </div>
+</div>
 
 <br>
 <strong>Company:</strong>
@@ -22,4 +24,4 @@
 <div class="">Catch Phrase: {{ user.company.catchPhrase }}</div>
 <div class="">BS: {{ user.company.bs }}</div>
 
-<hr />
+<hr style="border: 1px solid #f6f6f2;">

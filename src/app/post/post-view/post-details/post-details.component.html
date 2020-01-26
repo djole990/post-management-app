@@ -6,19 +6,21 @@
       class="form-control"
       [disabled]="!update"
       [(ngModel)]="post.title"
+      style="cursor: auto;"
     />
   </div>
   <div class="card-body">
     <h4>Body:</h4>
-    <textarea
+    <textarea rows="5"
       class="form-control"
       [disabled]="!update"
       [(ngModel)]="post.body"
-      style="height: 150px"
+      style="cursor: auto;"
     ></textarea>
   </div>
 </div>
 <br>
-<button *ngIf="update" (click)="updatePost()" class="btn btn-success">Save Chages</button>
+<div class="text-right">
+  <button *ngIf="update" (click)="updatePost()" class="btn btn-success">Save Chages</button>
+</div>
 
-<hr />
