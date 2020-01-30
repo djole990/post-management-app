@@ -11,6 +11,7 @@ export class User implements Deserializable {
   phone: string;
   website: string;
   company: Company;
+  imageUrl: string;
 
   deserialize(input: any): this {
     Object.assign(this, input);

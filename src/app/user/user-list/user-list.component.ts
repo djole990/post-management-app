@@ -3,6 +3,9 @@ import { UserService } from "src/app/services/user-service";
 import { User } from "src/app/models/user";
 import { Router } from "@angular/router";
 import { ToastrService } from 'ngx-toastr';
+import { TagService } from 'src/app/services/tag-service.service';
+import { Tag } from 'src/app/models/tag';
+import { Result } from 'src/app/models/result';
 
 @Component({
   selector: "app-user-list",
@@ -11,11 +14,21 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class UserListComponent implements OnInit {
   users: User[];
+  result: Result;
+  
 
-  constructor(private router: Router, private userService: UserService, private toastr: ToastrService) {}
+  constructor(private router: Router, 
+    private userService: UserService, 
+    private toastr: ToastrService,
+    private tagService: TagService) {}
 
   getAllUsers() {
     this.userService.getUsers().subscribe(users => (this.users = users));
+  }
+
+  getTags(){
+    this.tagService.getTags().subscribe(response => (this.result = response));
+    console.log(this.result);
   }
 
   deleteUserById(id: number) {
@@ -32,5 +45,6 @@ export class UserListComponent implements OnInit {
 
   ngOnInit() {
     this.getAllUsers();
+    this.getTags();
   }
 }

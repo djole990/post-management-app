@@ -2,6 +2,7 @@
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Tags</th>
       <th scope="col">Full Name</th>
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
@@ -12,6 +13,11 @@
     <tr *ngFor="let user of users">
       <td>
         <p> {{ user.id }} </p>
+      </td>
+      <td>
+        <div *ngFor="let tag of tags">
+            <p> {{ tag.confidence }} </p>
+        </div>
       </td>
       <td>
         <p> {{ user.name }}</p>
